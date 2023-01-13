@@ -24,6 +24,7 @@ public class UserService implements UserDetailsService {
                     System.out.println("用户名不存在");
                     return new UsernameNotFoundException("用户不存在");
                 });
+        // 根据角色查询权限
         return user;
     }
 }

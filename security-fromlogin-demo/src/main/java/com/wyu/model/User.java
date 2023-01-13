@@ -52,6 +52,7 @@ public class User implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
         for (Role role : roles) {
+            // 这里再根据角色查询权限 将权限放进authorities
             authorities.add(new SimpleGrantedAuthority(role.getName()));
         }
         return authorities;
